@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Illumios — AI for South Jersey Small Business</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0D1B4B;
+      --navy-light: #162259;
+      --orange: #F26522;
+      --orange-dark: #d95510;
+      --cream: #FAF7F2;
+      --white: #FFFFFF;
+      --gray: #6B7280;
+      --light-gray: #F3F4F6;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      background: var(--navy);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 68px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-logo {
+      text-decoration: none;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--orange-dark); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--navy);
+      padding: 100px 40px 90px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(242, 101, 34, 0.15);
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(242, 101, 34, 0.3);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 820px;
+      margin: 0 auto 24px;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 18px 40px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 20px rgba(242,101,34,0.35);
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .hero-note {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--orange);
+      padding: 22px 40px;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+      color: var(--white);
+    }
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 900;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      opacity: 0.85;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 90px 40px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 14px;
+    }
+    h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+
+    /* ─── PAIN POINTS ─── */
+    .pain { background: var(--cream); text-align: center; }
+    .pain h2 { color: var(--navy); }
+    .pain .section-sub { margin: 0 auto 56px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 30px;
+      text-align: left;
+      border: 1px solid rgba(13,27,75,0.08);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    }
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 18px;
+      display: block;
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+    .card.highlight {
+      border-color: var(--orange);
+      border-width: 2px;
+    }
+
+    /* ─── SOLUTION ─── */
+    .solution { background: var(--navy); }
+    .solution h2 { color: var(--white); }
+    .solution .section-sub { color: rgba(255,255,255,0.65); }
+    .solution .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: none;
+    }
+    .solution .card h3 { color: var(--white); }
+    .solution .card p { color: rgba(255,255,255,0.65); }
+    .solution .card-icon { font-size: 2.2rem; }
+    .solution-badge {
+      display: inline-block;
+      background: rgba(242,101,34,0.2);
+      color: var(--orange);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-top: 14px;
+    }
+
+    /* ─── CREDIBILITY ─── */
+    .credibility { background: var(--cream); }
+    .credibility h2 { color: var(--navy); }
+    .founders {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .founder-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 30px;
+      border: 1px solid rgba(13,27,75,0.08);
+    }
+    .founder-initials {
+      width: 64px;
+      height: 64px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .founder-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .founder-title {
+      font-size: 0.85rem;
+      color: var(--orange);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .founder-card p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+    .credibility-quote {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 40px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .credibility-quote p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .credibility-quote span { color: var(--orange); font-style: normal; font-weight: 800; }
+
+    /* ─── HOW IT WORKS ─── */
+    .how { background: var(--navy); text-align: center; }
+    .how h2 { color: var(--white); }
+    .how .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto 56px; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      position: relative;
+    }
+    .step {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 40px 28px;
+    }
+    .step-number {
+      width: 52px;
+      height: 52px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--white);
+      margin: 0 auto 22px;
+    }
+    .step h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .step p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+    .step-timeline {
+      font-size: 0.78rem;
+      color: var(--orange);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 16px;
+    }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      background: var(--orange);
+      text-align: center;
+      padding: 90px 40px;
+    }
+    .final-cta h2 {
+      color: var(--white);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    .final-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--orange);
+      padding: 18px 44px;
+      border-radius: 10px;
+      font-weight: 900;
+      font-size: 1.05rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transition: transform 0.1s;
+    }
+    .btn-white:hover { transform: translateY(-1px); }
+    .final-cta-note {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .service-areas {
+      margin-top: 48px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #070E27;
+      padding: 32px 40px;
+      text-align: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+    }
+    footer span { color: var(--orange); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      section { padding: 60px 20px; }
+      .hero { padding: 70px 20px 60px; }
+      .stats-bar { gap: 30px; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <img src="illumios-logo.png" alt="Illumios" style="height: 38px; width: auto; display: block;" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#cta">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#cta" class="nav-cta">Book a Free Call →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-badge">AI Education + Consultation · South Jersey</div>
+      <h1>AI Is Changing Business.<br/><span>Most Owners Don't Know Where to Start.</span></h1>
+      <p>Illumios helps small business owners in Burlington and Camden County learn how AI actually works, build a clear plan for using it, and implement the right systems — without needing to become a tech person.</p>
+      <a href="#cta" class="btn-primary">Book a Free Strategy Call →</a>
+      <p class="hero-note">30 minutes. We'll look at your business and tell you exactly what's worth your attention.</p>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-number">77%</span>
+      <span class="stat-label">of small businesses say AI is important to their future</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">6 in 10</span>
+      <span class="stat-label">don't know where to start or what tools to trust</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">$6K+</span>
+      <span class="stat-label">avg monthly revenue lost to manual, unautomated workflows</span>
+    </div>
+  </div>
+
+  <!-- PAIN POINTS -->
+  <section class="pain">
+    <div class="container">
+      <div class="section-label">Sound Familiar?</div>
+      <h2>You know AI matters.<br/>You just don't know what to do with it.</h2>
+      <p class="section-sub">You're not alone. These are the most common things we hear from South Jersey business owners every week.</p>
+      <div class="cards">
+        <div class="card highlight">
+          <span class="card-icon">🤯</span>
+          <h3>"I don't even know where to start."</h3>
+          <p>ChatGPT, automation tools, CRMs — it all sounds useful in theory. But nobody's shown you how it actually applies to your business, your industry, your day-to-day.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">💸</span>
+          <h3>"I tried a tool once. It just sat there."</h3>
+          <p>You signed up for something, poked around for a few hours, and gave up. Not because you're not smart — because nobody walked you through how to make it work for you.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">😰</span>
+          <h3>"My competitors are already using this."</h3>
+          <p>You can feel it. The businesses that are growing have something working behind the scenes. You're still doing manually what they've automated — and the gap is getting wider.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution" id="services">
+    <div class="container">
+      <div class="section-label">How We Help</div>
+      <h2 style="color:white">Three ways to work with Illumios.</h2>
+      <p class="section-sub">Whether you want to learn it, plan it, or have it built for you — we meet you where you are.</p>
+      <div class="cards">
+        <div class="card">
+          <span class="card-icon">🎓</span>
+          <h3>Illumios Academia</h3>
+          <p>Practical AI education built for business owners, not developers. Learn which tools are worth your time, how to set them up, and how to build workflows that actually run your business better.</p>
+          <span class="solution-badge">Cohort Forming Now</span>
+        </div>
+        <div class="card">
+          <span class="card-icon">🧭</span>
+          <h3>Strategy Consultation</h3>
+          <p>We audit your business, map out your biggest AI opportunities, and hand you a clear action plan — prioritized, jargon-free, and built around how you actually work. You leave knowing exactly what to do next.</p>
+          <span class="solution-badge">Most Popular</span>
+        </div>
+        <div class="card">
+          <span class="card-icon">⚙️</span>
+          <h3>Done-for-You Implementation</h3>
+          <p>Want us to just build it? We design and deploy your AI systems — missed call automation, lead follow-up, review requests, CRM setup — and hand you the keys when it's live.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIBILITY -->
+  <section class="credibility" id="about">
+    <div class="container">
+      <div class="section-label">Who We Are</div>
+      <h2>Built by people who actually know this.</h2>
+      <p class="section-sub">Illumios isn't a tech agency that learned AI last year. We bring real enterprise AI experience to South Jersey small businesses — translated into plain English, priced for the real world.</p>
+      <div class="founders">
+        <div class="founder-card">
+          <div class="founder-initials">SS</div>
+          <div class="founder-name">Steve Sposato</div>
+          <div class="founder-title">Co-Founder & Operator</div>
+          <p>Operations and workforce training background. Full-time availability. Handles every client relationship, system setup, and ongoing support. His entire career is getting real people to actually use new tools — the reason most AI agencies lose clients.</p>
+        </div>
+        <div class="founder-card">
+          <div class="founder-initials">SP</div>
+          <div class="founder-name">Sunshine Pagan</div>
+          <div class="founder-title">Co-Founder & Strategist<br/>Enterprise Enablement Leader | AI & Contact Center Transformation</div>
+          <p>Leads AI and contact center transformation for Fortune 500 companies professionally. She does for enterprise what we bring to local small businesses. That's not a pitch — it's a fact. Nobody else in this space can say that.</p>
+        </div>
+      </div>
+      <div class="credibility-quote">
+        <p>"Most AI consultants sell you tools. We teach you how to <span>think about</span> AI first — so every decision you make, every tool you buy, every system you build actually moves your business forward."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-label">The Process</div>
+      <h2 style="color:white">Simple from the start.</h2>
+      <p class="section-sub">Every engagement starts the same way — we learn your business first, then tell you exactly what's worth doing.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Book a free strategy call</h3>
+          <p>We look at your business before we get on the phone — your reviews, your follow-up gaps, your daily workflow. You'll hear real findings in the first 10 minutes.</p>
+          <div class="step-timeline">Today</div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Get your AI roadmap</h3>
+          <p>We map out exactly where AI can help your business — ranked by impact and effort. No fluff, no upsell pressure. Just a clear, honest picture of what's possible.</p>
+          <div class="step-timeline">Day 1–3</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Learn it, plan it, or let us build it</h3>
+          <p>Choose your path: join an Academia cohort and learn how to do it yourself, hire us for ongoing strategy, or let us implement it for you. We work the way you want to work.</p>
+          <div class="step-timeline">Your Choice</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="cta">
+    <div class="container">
+      <h2>Ready to stop guessing about AI?</h2>
+      <p>Book a free 30-minute strategy call. We'll look at your business, tell you what's actually worth doing, and show you the path forward — whether that's a course, a consultation, or a full build.</p>
+      <a href="YOUR_CALENDAR_LINK_HERE" class="btn-white">Book Your Free Strategy Call →</a>
+      <p class="final-cta-note">No pitch. No pressure. Just clarity.</p>
+      <p class="service-areas">Serving Marlton, Cherry Hill, Mount Laurel, Moorestown, Voorhees, Medford, Evesham, and surrounding South Jersey communities.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><img src="illumios-logo.png" alt="Illumios" style="height:28px; width:auto; vertical-align:middle; margin-bottom:12px; opacity:0.85;" /></p>
+    <p>AI for South Jersey Small Business &nbsp;·&nbsp; <span>illumios.com</span> &nbsp;·&nbsp; steve@illumios.com</p>
+    <p style="margin-top:8px">© 2026 Illumios LLC. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
