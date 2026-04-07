@@ -60,7 +60,8 @@
 
     /* ─── HERO ─── */
     .hero { background: var(--navy); padding: 100px 40px 90px; text-align: center; }
-    .hero-badge { display: inline-block; background: rgba(242, 101, 34, 0.15); color: var(--orange); font-weight: 700; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 28px; border: 1px solid rgba(242, 101, 34, 0.3); }
+    .hero-logo-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 36px; }
+    .hero-tagline { font-size: 0.82rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
     .hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 900; color: var(--white); line-height: 1.15; max-width: 820px; margin: 0 auto 24px; }
     .hero h1 span { color: var(--orange); }
     .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto 44px; line-height: 1.7; }
@@ -159,7 +160,7 @@
       The second lowercase "i" (6th char) has an orange 4-point star replacing its dot.
       Star is centered at x≈70, y≈6 (above the text baseline of 30).
     -->
-    <svg viewBox="0 0 116 36" height="34" width="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Illumios">
+    <svg viewBox="0 0 116 36" height="46" width="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Illumios">
       <!-- Base wordmark text -->
       <text
         font-family="'Nunito', sans-serif"
@@ -192,7 +193,13 @@
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="container">
-    <div class="hero-badge">AI Education + Consultation · South Jersey</div>
+    <div class="hero-logo-wrap">
+      <svg viewBox="0 0 116 36" height="90" width="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Illumios">
+        <text font-family="'Nunito', sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" y="30" x="0" letter-spacing="-0.5">illumios</text>
+        <path d="M 0,-5.5 L 1.4,-1.4 L 5.5,0 L 1.4,1.4 L 0,5.5 L -1.4,1.4 L -5.5,0 L -1.4,-1.4 Z" fill="#F26522" transform="translate(70, 7)"/>
+      </svg>
+      <p class="hero-tagline">Lighting your path through AI</p>
+    </div>
     <h1>AI Is Changing Business.<br/><span>Most Owners Don't Know Where to Start.</span></h1>
     <p>Illumios helps small business owners in Burlington and Camden County learn how AI actually works, build a clear plan for using it, and implement the right systems — without needing to become a tech person.</p>
     <a href="#cta" class="btn-primary">Book a Free Strategy Call →</a>
