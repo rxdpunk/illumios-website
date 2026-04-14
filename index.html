@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>illumios — AI Education &amp; Consultation for Small Business</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <title>illumios — Illumios Academia for Small Business Owners</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -62,21 +62,17 @@
     @media (max-width: 768px) { .nav-links { display: none; } }
 
     /* ─── HERO ─── */
-    .hero { background: var(--navy); padding: 100px 40px 90px; text-align: center; }
-    .hero-logo-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 36px; }
+    .hero { background: var(--navy); padding: 88px 40px 78px; text-align: center; }
+    .hero-logo-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 28px; }
+    .hero-logo { height: 112px; width: auto; }
     .hero-tagline { font-size: 0.82rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); text-align: center; width: 100%; }
     .hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 900; color: var(--white); line-height: 1.15; max-width: 820px; margin: 0 auto 24px; }
     .hero h1 span { color: var(--orange); }
-    .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto 44px; line-height: 1.7; }
+    .hero p { font-size: 1.08rem; color: rgba(255,255,255,0.75); max-width: 680px; margin: 0 auto 32px; line-height: 1.7; }
     .btn-primary { display: inline-block; background: var(--orange); color: var(--white); padding: 18px 40px; border-radius: 10px; font-weight: 800; font-size: 1.05rem; text-decoration: none; transition: background 0.2s, transform 0.1s; box-shadow: 0 4px 20px rgba(242,101,34,0.35); }
     .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
-    .hero-note { margin-top: 18px; font-size: 0.85rem; color: rgba(255,255,255,0.4); }
-
-    /* ─── STATS BAR ─── */
-    .stats-bar { background: var(--orange); padding: 22px 40px; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
-    .stat { text-align: center; color: var(--white); }
-    .stat-number { font-size: 1.8rem; font-weight: 900; display: block; }
-    .stat-label { font-size: 0.8rem; font-weight: 600; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.5px; }
+    .hero-note { margin-top: 18px; font-size: 0.9rem; color: rgba(255,255,255,0.52); max-width: 620px; }
+    .hero-subtitle { display: inline-block; margin-bottom: 18px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.74); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.4px; }
 
     /* ─── SECTION BASE ─── */
     section { padding: 90px 40px; }
@@ -84,6 +80,15 @@
     .section-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
     h2 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 900; line-height: 1.2; margin-bottom: 18px; }
     .section-sub { font-size: 1.05rem; color: var(--gray); max-width: 600px; line-height: 1.7; margin-bottom: 56px; }
+
+    /* ─── CALL PREVIEW ─── */
+    .call-preview { background: linear-gradient(180deg, rgba(250,247,242,0.9) 0%, var(--white) 100%); text-align: center; }
+    .call-preview .section-sub { margin: 0 auto 40px; }
+    .call-preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+    .call-preview-card { background: var(--white); border-radius: 16px; padding: 30px 26px; border: 1px solid rgba(13,27,75,0.08); box-shadow: 0 10px 28px rgba(13,27,75,0.06); text-align: left; }
+    .call-preview-card h3 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .call-preview-card p { font-size: 0.94rem; color: var(--gray); line-height: 1.65; }
+    .call-preview-note { margin-top: 26px; font-size: 0.95rem; color: var(--gray); }
 
     /* ─── PAIN POINTS ─── */
     .pain { background: var(--cream); text-align: center; }
@@ -105,6 +110,7 @@
     .solution .card p { color: rgba(255,255,255,0.65); }
     .solution .card-icon { font-size: 2.2rem; }
     .solution-badge { display: inline-block; background: rgba(242,101,34,0.2); color: var(--orange); font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; margin-top: 14px; }
+    .solution-kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.72); font-size: 0.82rem; font-weight: 700; }
 
     /* ─── CREDIBILITY ─── */
     .credibility { background: var(--cream); text-align: center; }
@@ -131,6 +137,21 @@
     .step p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
     .step-timeline { font-size: 0.78rem; color: var(--orange); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 16px; }
 
+    /* ─── EXPECTATIONS ─── */
+    .expectations { background: var(--cream); }
+    .expectations-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 32px; align-items: start; }
+    .expectation-card,
+    .faq-card { background: var(--white); border-radius: 16px; padding: 34px 30px; border: 1px solid rgba(13,27,75,0.08); box-shadow: 0 6px 24px rgba(13,27,75,0.05); }
+    .expectation-list { list-style: none; display: grid; gap: 18px; }
+    .expectation-list li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; }
+    .expectation-number { width: 34px; height: 34px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.9rem; font-weight: 800; }
+    .expectation-copy strong { display: block; margin-bottom: 4px; font-size: 0.98rem; color: var(--navy); }
+    .expectation-copy span { font-size: 0.93rem; color: var(--gray); line-height: 1.6; }
+    .faq-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 22px; }
+    .faq-item + .faq-item { margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(13,27,75,0.08); }
+    .faq-item strong { display: block; font-size: 0.96rem; color: var(--navy); margin-bottom: 6px; }
+    .faq-item p { font-size: 0.93rem; color: var(--gray); line-height: 1.65; }
+
     /* ─── FINAL CTA ─── */
     .final-cta { background: var(--orange); text-align: center; padding: 90px 40px; }
     .final-cta h2 { color: var(--white); font-size: clamp(1.8rem, 4vw, 3rem); max-width: 700px; margin: 0 auto 20px; }
@@ -139,6 +160,15 @@
     .btn-white:hover { transform: translateY(-1px); }
     .final-cta-note { margin-top: 18px; font-size: 0.85rem; color: rgba(255,255,255,0.6); }
     .service-areas { margin-top: 48px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    .apply-form { max-width: 780px; margin: 0 auto; text-align: left; }
+    .apply-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 18px; }
+    .apply-field { display: flex; flex-direction: column; gap: 8px; }
+    .apply-label { font-size: 0.9rem; font-weight: 800; color: rgba(255,255,255,0.92); }
+    .apply-input { width: 100%; border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 14px 16px; font: inherit; color: var(--navy); background: rgba(255,255,255,0.96); }
+    .apply-input::placeholder { color: #6B7280; }
+    .apply-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .apply-legal { font-size: 0.84rem; color: rgba(255,255,255,0.72); line-height: 1.6; margin-top: 16px; }
+    .apply-legal a { color: var(--white); }
 
     /* ─── FOOTER ─── */
     footer { background: #070E27; padding: 32px 40px; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; }
@@ -149,11 +179,30 @@
     .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; margin: 0 10px; }
     .footer-links a:hover { color: rgba(255,255,255,0.7); }
 
+    @media (max-width: 860px) {
+      .expectations-layout { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 640px) {
-      nav { padding: 16px 20px; }
-      section { padding: 60px 20px; }
-      .hero { padding: 70px 20px 60px; }
-      .stats-bar { gap: 30px; padding: 20px; }
+      nav { padding: 10px 16px; height: auto; min-height: 64px; }
+      .nav-logo { max-width: 150px; }
+      .nav-logo svg { height: 28px; width: auto; }
+      .nav-tagline { display: none; }
+      .nav-right { gap: 0; }
+      .nav-cta { font-size: 0.76rem; padding: 10px 12px; }
+      section { padding: 56px 20px; }
+      .hero { padding: 52px 20px 48px; }
+      .hero-logo { height: 74px; }
+      .hero-logo-wrap { margin-bottom: 18px; }
+      .hero h1 { font-size: 1.9rem; margin-bottom: 18px; }
+      .hero p { font-size: 0.98rem; margin-bottom: 20px; }
+      .hero-subtitle { margin-bottom: 14px; }
+      .hero-note { font-size: 0.84rem; margin-top: 14px; }
+      .btn-primary, .btn-white { width: 100%; max-width: 360px; padding: 16px 28px; }
+      .call-preview-grid, .cards, .steps { gap: 18px; }
+      .card, .step, .call-preview-card, .expectation-card, .faq-card, .founder-card { padding: 26px 22px; }
+      .apply-grid { grid-template-columns: 1fr; }
+      .apply-actions { flex-direction: column; align-items: stretch; }
     }
   </style>
 </head>
@@ -186,13 +235,13 @@
   </a>
 
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
+    <li><a href="#services">Academia</a></li>
     <li><a href="#about">About Us</a></li>
     <li><a href="#how">How It Works</a></li>
-    <li><a href="#cta">Contact</a></li>
+    <li><a href="#apply">Apply</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://api.leadconnectorhq.com/widget/bookings/illumios-discovery-call" target="_blank" class="nav-cta">Book a Free Call →</a>
+    <a href="#apply" class="nav-cta">Start Your Application →</a>
   </div>
 </nav>
 
@@ -200,41 +249,50 @@
 <section class="hero" id="hero">
   <div class="container">
     <div class="hero-logo-wrap">
-      <svg viewBox="0 0 116 36" height="140" width="auto" xmlns="http://www.w3.org/2000/svg" aria-label="illumios">
+      <svg viewBox="0 0 116 36" class="hero-logo" xmlns="http://www.w3.org/2000/svg" aria-label="illumios">
         <text font-family="'Nunito', sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" y="30" x="58" text-anchor="middle" letter-spacing="-0.5">illumios</text>
         <path d="M 0,-5.5 L 1.4,-1.4 L 5.5,0 L 1.4,1.4 L 0,5.5 L -1.4,1.4 L -5.5,0 L -1.4,-1.4 Z" fill="#F26522" transform="translate(72, 7)"/>
       </svg>
       <p class="hero-tagline">Lighting your path through AI</p>
     </div>
-    <h1>AI Is Changing Business.<br/><span>Most Owners Don't Know Where to Start.</span></h1>
-    <p>illumios helps small business owners learn how AI actually works and build a clear plan for using it — without needing to become a tech person.</p>
-    <a href="https://api.leadconnectorhq.com/widget/bookings/illumios-discovery-call" target="_blank" class="btn-primary">Book a Free Strategy Call →</a>
-    <p class="hero-note">30 minutes. We'll look at your business and tell you exactly what's worth your attention.</p>
+    <p class="hero-subtitle">Illumios Academia · AI for Small Business Owners: Your First 30 Days</p>
+    <h1>Launch your first real AI win in 30 days.<br/><span>Without getting lost in tools, jargon, or hype.</span></h1>
+    <p>Illumios Academia is our live small-group course for owners who want practical AI training, real workflow wins, and a clear first-month plan they can actually use in the business.</p>
+    <a href="#apply" class="btn-primary">Start Your Application →</a>
+    <p class="hero-note">4 live sessions over 2 weeks. Founding-member target price: $497. Start here with your name and email, then continue into a short fit quiz designed to surface the right next step.</p>
   </div>
 </section>
 
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat">
-    <span class="stat-number">77%</span>
-    <span class="stat-label">of small businesses say AI is important to their future</span>
+<!-- CALL PREVIEW -->
+<section class="call-preview">
+  <div class="container">
+    <div class="section-label">The Offer</div>
+    <h2>What Illumios Academia includes.</h2>
+    <p class="section-sub">This is the current priority offer across illumios. The goal is simple: help business owners get one meaningful implementation win fast enough to build confidence and momentum.</p>
+    <div class="call-preview-grid">
+      <div class="call-preview-card">
+        <h3>4 live sessions in 2 weeks</h3>
+        <p>You move through a focused cohort experience designed to help you understand where AI fits, what to use, and how to turn it into practical action.</p>
+      </div>
+      <div class="call-preview-card">
+        <h3>Outputs you can actually use</h3>
+        <p>You leave with 3 relevant AI use cases, reusable prompts, 1 working workflow or repeatable process, and a 30-day action plan.</p>
+      </div>
+      <div class="call-preview-card">
+        <h3>Application-first funnel</h3>
+        <p>You start with a short application and fit quiz so we can understand your context before inviting the right people to an enrollment conversation.</p>
+      </div>
+    </div>
+    <p class="call-preview-note">Best fit for service-based businesses, owner-operators, and small teams who want practical guided learning instead of another generic AI tutorial.</p>
   </div>
-  <div class="stat">
-    <span class="stat-number">6 in 10</span>
-    <span class="stat-label">don't know where to start or what tools to trust</span>
-  </div>
-  <div class="stat">
-    <span class="stat-number">$6K+</span>
-    <span class="stat-label">avg monthly revenue lost to manual, unautomated workflows</span>
-  </div>
-</div>
+</section>
 
 <!-- PAIN POINTS -->
 <section class="pain">
   <div class="container">
     <div class="section-label">Sound Familiar?</div>
     <h2>You know AI matters.<br/>You just don't know what to do with it.</h2>
-    <p class="section-sub">You're not alone. These are the most common things we hear from small business owners every week.</p>
+    <p class="section-sub">These are the most common reasons owners reach out before they invest more time, money, or energy into the wrong tools.</p>
     <div class="cards">
       <div class="card">
         <span class="card-icon">🤯</span>
@@ -259,20 +317,21 @@
 <section class="solution" id="services">
   <div class="container">
     <div class="section-label">How We Help</div>
-    <h2 style="color:white">Two ways to work with illumios.</h2>
-    <p class="section-sub">Whether you want to learn it yourself or get a clear strategy — we meet you where you are.</p>
+    <div class="solution-kicker">Offer-first. Additional support comes later.</div>
+    <h2 style="color:white">Illumios Academia is the front-door offer.</h2>
+    <p class="section-sub">We are leading with a live training experience for small business owners. Discovery calls help qualify and enroll the right people into the cohort, while strategy work remains a secondary next step for people who need deeper support.</p>
     <div class="cards">
       <div class="card">
         <span class="card-icon">🎓</span>
-        <h3>illumios Academia</h3>
-        <p>Practical AI education built for business owners, not developers. Learn which tools are worth your time, how to set them up, and how to build workflows that actually run your business better.</p>
-        <span class="solution-badge">Cohort Forming Now</span>
+        <h3>Illumios Academia</h3>
+        <p>A live small-group program for owners who want guided help using AI in real work. We focus on high-value use cases, practical prompting, and one workflow you can keep using after the program ends.</p>
+        <span class="solution-badge">Current Priority Offer</span>
       </div>
       <div class="card">
-        <span class="card-icon">🧭</span>
-        <h3>Strategy Consultation</h3>
-        <p>We audit your business, map out your biggest AI opportunities, and hand you a clear action plan — prioritized, jargon-free, and built around how you actually work. You leave knowing exactly what to do next.</p>
-        <span class="solution-badge">Most Popular</span>
+        <span class="card-icon">📝</span>
+        <h3>Application + Enrollment Path</h3>
+        <p>The website and quiz qualify interest first. Then, if the program looks like the right fit, we use a short enrollment call to answer questions and guide the right owners into the cohort.</p>
+        <span class="solution-badge">Academia Funnel</span>
       </div>
     </div>
   </div>
@@ -282,24 +341,24 @@
 <section class="credibility" id="about">
   <div class="container">
     <div class="section-label">Who We Are</div>
-    <h2>Built by people who actually know this.</h2>
-    <p class="section-sub">illumios isn't a tech agency that learned AI last year. We bring real enterprise AI experience to small businesses — translated into plain English, priced for the real world.</p>
+    <h2>Built by operators focused on adoption, not hype.</h2>
+    <p class="section-sub">illumios was created to help small business owners make practical decisions about AI. Our background combines enterprise transformation work, workforce training, and day-to-day operational support so the advice stays useful in the real world.</p>
     <div class="founders">
       <div class="founder-card">
         <div class="founder-initials">SS</div>
         <div class="founder-name">Steve Sposato</div>
         <div class="founder-title">Co-Founder &amp; Operator<br/>Operations Lead | AI Adoption &amp; Client Enablement</div>
-        <p>Operations and workforce training background. Full-time availability. Handles every client relationship, education delivery, and ongoing consultation. His entire career is getting real people to actually use new tools — and understand why they work.</p>
+        <p>Steve leads client relationships, live delivery, and day-to-day operations. His background is in operations and workforce training, with a focus on helping people adopt new tools in a way that actually sticks.</p>
       </div>
       <div class="founder-card">
         <div class="founder-initials">SP</div>
         <div class="founder-name">Sunshine Pagan</div>
         <div class="founder-title">Co-Founder &amp; Strategist<br/>Enterprise Enablement Leader | AI &amp; Contact Center Transformation</div>
-        <p>Leads AI and contact center transformation for Fortune 500 companies professionally. She does for enterprise what we bring to small businesses nationwide. That's not a pitch — it's a fact. Nobody else in this space can say that.</p>
+        <p>Sunshine leads AI and contact center transformation work in enterprise environments and brings that experience into Illumios curriculum and strategy design. Her focus is translating complex change into clear, usable next steps.</p>
       </div>
     </div>
     <div class="credibility-quote">
-      <p>"Most AI consultants sell you tools. We teach you how to <span>think about</span> AI first — so every decision you make, every tool you buy, every system you build actually moves your business forward."</p>
+      <p>"The best AI plan is the one your business will actually use. We start with your workflow, your bottlenecks, and your goals so the next move feels practical from day one."</p>
     </div>
   </div>
 </section>
@@ -308,26 +367,77 @@
 <section class="how" id="how">
   <div class="container">
     <div class="section-label">The Process</div>
-    <h2 style="color:white">Simple from the start.</h2>
-    <p class="section-sub">Every engagement starts the same way — we learn your business first, then tell you exactly what's worth doing.</p>
+    <h2 style="color:white">Simple from first click to first win.</h2>
+    <p class="section-sub">The process is designed to get the right owners into the program quickly, set clear expectations, and move them toward one real implementation result.</p>
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Book a free strategy call</h3>
-        <p>We look at your business before we get on the phone — your reviews, your follow-up gaps, your daily workflow. You'll hear real findings in the first 10 minutes.</p>
+        <h3>Apply on this page</h3>
+        <p>Start with your name and email, then answer a short fit quiz so we can understand your business, your current AI experience, and what kind of help fits best.</p>
         <div class="step-timeline">Today</div>
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Get your AI roadmap</h3>
-        <p>We map out exactly where AI can help your business — ranked by impact and effort. No fluff, no upsell pressure. Just a clear, honest picture of what's possible.</p>
-        <div class="step-timeline">Day 1–3</div>
+        <h3>Review your roadmap</h3>
+        <p>You get a personalized recommendation, clearer priorities, and a better sense of whether Illumios Academia is the right next step now or later.</p>
+        <div class="step-timeline">Immediately After</div>
       </div>
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Learn it or get a strategy</h3>
-        <p>Choose your path: join an Academia cohort and learn how to build it yourself, or hire us for a consultation and leave with a clear, prioritized action plan. Either way, you move forward.</p>
-        <div class="step-timeline">Your Choice</div>
+        <h3>Join the live cohort</h3>
+        <p>If it fits, we invite you into a short enrollment conversation and move you toward 4 live sessions focused on one meaningful implementation win.</p>
+        <div class="step-timeline">2 Weeks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPECTATIONS -->
+<section class="expectations">
+  <div class="container">
+    <div class="section-label">What To Expect</div>
+    <h2>What happens after you apply.</h2>
+    <p class="section-sub">Here&rsquo;s what the process looks like when the goal is to help the right owners get into the program and get a real outcome from it.</p>
+    <div class="expectations-layout">
+      <div class="expectation-card">
+        <ul class="expectation-list">
+          <li>
+            <div class="expectation-number">1</div>
+            <div class="expectation-copy">
+              <strong>You start with a short application.</strong>
+              <span>We ask for your name and email first, then move you into a fit quiz so the next step reflects your business instead of generic AI advice.</span>
+            </div>
+          </li>
+          <li>
+            <div class="expectation-number">2</div>
+            <div class="expectation-copy">
+              <strong>You get a clear recommendation.</strong>
+              <span>If the program fits, we guide you toward enrollment. If you need a different path first, we will tell you plainly instead of forcing the sale.</span>
+            </div>
+          </li>
+          <li>
+            <div class="expectation-number">3</div>
+            <div class="expectation-copy">
+              <strong>You work toward one meaningful implementation win.</strong>
+              <span>The program is built to move you from uncertainty into practical use, not just inspiration.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="faq-card">
+        <h3>Quick answers</h3>
+        <div class="faq-item">
+          <strong>Do I need to be technical?</strong>
+          <p>No. The page, the application, and the recommendations are built for business owners, not developers.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Is this a sales call?</strong>
+          <p>Not at first. The first step is a short application and fit quiz. If the program looks like a match, the next step may be a short enrollment call.</p>
+        </div>
+        <div class="faq-item">
+          <strong>What if I need deeper help later?</strong>
+          <p>That can happen after the cohort. Right now, the main offer is Illumios Academia and we want to keep the promise focused.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -336,10 +446,29 @@
 <!-- FINAL CTA -->
 <section class="final-cta" id="cta">
   <div class="container">
-    <h2>Ready to stop guessing about AI?</h2>
-    <p>Book a free 30-minute strategy call. We'll look at your business, tell you what's actually worth doing, and show you the path forward — whether that's a course or a consultation.</p>
-    <a href="https://api.leadconnectorhq.com/widget/bookings/illumios-discovery-call" class="btn-white">Book Your Free Strategy Call →</a>
-    <p class="final-cta-note">No pitch. No pressure. Just clarity.</p>
+    <h2>Start your application.</h2>
+    <p>Tell us where to send your program details and personalized fit roadmap. Then we&rsquo;ll take you into the short quiz that helps qualify the right owners for Illumios Academia.</p>
+    <form class="apply-form" id="apply" onsubmit="handleAcademiaApplication(event)">
+      <div class="apply-grid">
+        <div class="apply-field">
+          <label class="apply-label" for="apply-first-name">First Name</label>
+          <input class="apply-input" type="text" id="apply-first-name" name="first_name" placeholder="What should we call you?" required />
+        </div>
+        <div class="apply-field">
+          <label class="apply-label" for="apply-email">Email Address</label>
+          <input class="apply-input" type="email" id="apply-email" name="email" placeholder="you@business.com" required />
+        </div>
+        <div class="apply-field">
+          <label class="apply-label" for="apply-phone">Phone (optional)</label>
+          <input class="apply-input" type="tel" id="apply-phone" name="phone" placeholder="If you want follow-up help later" />
+        </div>
+      </div>
+      <div class="apply-actions">
+        <button type="submit" class="btn-white">Continue to Fit Quiz →</button>
+      </div>
+      <p class="apply-legal">By continuing, you agree that illumios may email you about Illumios Academia and related next steps. No spam. Review our <a href="/privacy.html">Privacy Policy</a>.</p>
+    </form>
+    <p class="final-cta-note">4 live sessions over 2 weeks. Remote. Designed for small business owners.</p>
     <p class="service-areas">100% remote. Serving small businesses across the country.</p>
   </div>
 </section>
@@ -364,7 +493,7 @@
     </svg>
     <span class="footer-tagline">Lighting your path through AI</span>
   </div>
-  <p>AI Education &amp; Consultation for Small Business &nbsp;·&nbsp; <span>illumios.com</span> &nbsp;·&nbsp; info@illumios.com</p>
+  <p>Education-first AI training for small business owners &nbsp;·&nbsp; <span>illumios.com</span> &nbsp;·&nbsp; info@illumios.com</p>
   <div class="footer-links">
     <a href="/tos.html">Terms of Service</a>
     <a href="/privacy.html">Privacy Policy</a>
@@ -372,6 +501,99 @@
   <p style="margin-top:8px">© 2026 illumios LLC. All rights reserved.</p>
 </footer>
 
+<script src="/ghl-config.js"></script>
+<script>
+function getGhlConfig() {
+  return window.ILLUMIOS_GHL || {};
+}
+
+function ensureWebhookTargetFrame() {
+  let frame = document.getElementById('ghl-webhook-target');
+  if (!frame) {
+    frame = document.createElement('iframe');
+    frame.id = 'ghl-webhook-target';
+    frame.name = 'ghl-webhook-target';
+    frame.style.display = 'none';
+    document.body.appendChild(frame);
+  }
+  return frame;
+}
+
+function postToGhlWebhook(payload) {
+  const { inboundWebhookUrl = '' } = getGhlConfig();
+  if (!inboundWebhookUrl) return false;
+
+  ensureWebhookTargetFrame();
+
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = inboundWebhookUrl;
+  form.target = 'ghl-webhook-target';
+  form.style.display = 'none';
+
+  Object.entries(payload).forEach(([key, value]) => {
+    if (value === undefined || value === null || value === '') return;
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = key;
+    input.value = typeof value === 'string' ? value : JSON.stringify(value);
+    form.appendChild(input);
+  });
+
+  document.body.appendChild(form);
+  form.submit();
+  document.body.removeChild(form);
+  return true;
+}
+
+function handleAcademiaApplication(event) {
+  event.preventDefault();
+
+  const firstName = document.getElementById('apply-first-name').value.trim();
+  const email = document.getElementById('apply-email').value.trim();
+  const phone = document.getElementById('apply-phone').value.trim();
+  const ghl = getGhlConfig();
+
+  if (!firstName || !email) return;
+
+  const lead = {
+    firstName,
+    email,
+    phone,
+    source: 'illumios-website',
+    offer: 'illumios-academia'
+  };
+
+  postToGhlWebhook({
+    event_name: 'website_academia_application_started',
+    source: 'illumios-website',
+    offer: ghl.offerSlug || 'illumios-academia',
+    location_id: ghl.locationId || '',
+    page_url: window.location.href,
+    first_name: firstName,
+    email,
+    phone,
+    tags: 'academia-interest,illumios-academia,website-application',
+    payload_json: JSON.stringify(lead)
+  });
+
+  try {
+    localStorage.setItem('illumiosAcademiaLead', JSON.stringify(lead));
+  } catch (error) {
+    console.warn('Unable to store lead locally before redirect.', error);
+  }
+
+  const params = new URLSearchParams({
+    first_name: firstName,
+    email,
+    source: 'website-academia'
+  });
+
+  if (phone) params.set('phone', phone);
+
+  window.location.href = `https://quiz.illumios.com?${params.toString()}`;
+}
+</script>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69d61e573d6e1646e16177f4"></script>
 
 </body>
