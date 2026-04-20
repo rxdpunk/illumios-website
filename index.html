@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>illumios — Illumios Academia for Small Business Owners</title>
+  <title>illumios — AI for Small Business Owners</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -156,8 +156,9 @@
     .final-cta { background: var(--orange); text-align: center; padding: 90px 40px; }
     .final-cta h2 { color: var(--white); font-size: clamp(1.8rem, 4vw, 3rem); max-width: 700px; margin: 0 auto 20px; }
     .final-cta p { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 520px; margin: 0 auto 44px; line-height: 1.7; }
-    .btn-white { display: inline-block; background: var(--white); color: var(--orange); padding: 18px 44px; border-radius: 10px; font-weight: 900; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.15); transition: transform 0.1s; }
+    .btn-white { display: inline-block; background: var(--white); color: var(--orange); padding: 18px 44px; border-radius: 10px; font-weight: 900; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.15); transition: transform 0.1s; border: 0; cursor: pointer; }
     .btn-white:hover { transform: translateY(-1px); }
+    .btn-white:disabled { opacity: 0.7; cursor: wait; transform: none; }
     .final-cta-note { margin-top: 18px; font-size: 0.85rem; color: rgba(255,255,255,0.6); }
     .service-areas { margin-top: 48px; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
     .apply-form { max-width: 780px; margin: 0 auto; text-align: left; }
@@ -169,6 +170,10 @@
     .apply-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .apply-legal { font-size: 0.84rem; color: rgba(255,255,255,0.72); line-height: 1.6; margin-top: 16px; }
     .apply-legal a { color: var(--white); }
+    .apply-status { margin-top: 18px; border-radius: 12px; padding: 14px 16px; font-size: 0.95rem; font-weight: 700; line-height: 1.6; }
+    .apply-status[hidden] { display: none; }
+    .apply-status.apply-error { background: rgba(125,12,12,0.18); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .apply-status.apply-success { background: rgba(255,255,255,0.16); color: var(--white); border: 1px solid rgba(255,255,255,0.24); }
 
     /* ─── FOOTER ─── */
     footer { background: #070E27; padding: 32px 40px; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.85rem; }
@@ -235,7 +240,7 @@
   </a>
 
   <ul class="nav-links">
-    <li><a href="#services">Academia</a></li>
+    <li><a href="#services">Program</a></li>
     <li><a href="#about">About Us</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#apply">Apply</a></li>
@@ -255,11 +260,11 @@
       </svg>
       <p class="hero-tagline">Lighting your path through AI</p>
     </div>
-    <p class="hero-subtitle">Illumios Academia · AI for Small Business Owners: Your First 30 Days</p>
+    <p class="hero-subtitle">illumios · Live AI Training for Business Owners</p>
     <h1>Launch your first real AI win in 30 days.<br/><span>Without getting lost in tools, jargon, or hype.</span></h1>
-    <p>Illumios Academia is our live small-group course for owners who want practical AI training, real workflow wins, and a clear first-month plan they can actually use in the business.</p>
+    <p>illumios is our live small-group course for owners who want practical AI training, real workflow wins, and a clear first-month plan they can actually use in the business.</p>
     <a href="#apply" class="btn-primary">Start Your Application →</a>
-    <p class="hero-note">4 live sessions over 2 weeks. Founding-member target price: $497. Start here with your name and email, then continue into a short fit quiz designed to surface the right next step.</p>
+    <p class="hero-note">4 live sessions over 2 weeks. Start here with your name and email, then continue into a short fit quiz designed to surface the right next step.</p>
   </div>
 </section>
 
@@ -267,12 +272,12 @@
 <section class="call-preview">
   <div class="container">
     <div class="section-label">The Offer</div>
-    <h2>What Illumios Academia includes.</h2>
+    <h2>What illumios includes.</h2>
     <p class="section-sub">This is the current priority offer across illumios. The goal is simple: help business owners get one meaningful implementation win fast enough to build confidence and momentum.</p>
     <div class="call-preview-grid">
       <div class="call-preview-card">
         <h3>4 live sessions in 2 weeks</h3>
-        <p>You move through a focused cohort experience designed to help you understand where AI fits, what to use, and how to turn it into practical action.</p>
+        <p>You move through a focused live program designed to help you understand where AI fits, what to use, and how to turn it into practical action.</p>
       </div>
       <div class="call-preview-card">
         <h3>Outputs you can actually use</h3>
@@ -280,7 +285,7 @@
       </div>
       <div class="call-preview-card">
         <h3>Application-first funnel</h3>
-        <p>You start with a short application and fit quiz so we can understand your context before inviting the right people to an enrollment conversation.</p>
+        <p>You start with a short application and fit quiz so we can understand your context before moving the right people into payment, account setup, and calendar booking.</p>
       </div>
     </div>
     <p class="call-preview-note">Best fit for service-based businesses, owner-operators, and small teams who want practical guided learning instead of another generic AI tutorial.</p>
@@ -318,20 +323,20 @@
   <div class="container">
     <div class="section-label">How We Help</div>
     <div class="solution-kicker">Offer-first. Additional support comes later.</div>
-    <h2 style="color:white">Illumios Academia is the front-door offer.</h2>
-    <p class="section-sub">We are leading with a live training experience for small business owners. Discovery calls help qualify and enroll the right people into the cohort, while strategy work remains a secondary next step for people who need deeper support.</p>
+    <h2 style="color:white">illumios is the front-door offer.</h2>
+    <p class="section-sub">We are leading with a live training experience for small business owners. Discovery calls help qualify and enroll the right people into the program, while strategy work remains a secondary next step for people who need deeper support.</p>
     <div class="cards">
       <div class="card">
         <span class="card-icon">🎓</span>
-        <h3>Illumios Academia</h3>
+        <h3>illumios</h3>
         <p>A live small-group program for owners who want guided help using AI in real work. We focus on high-value use cases, practical prompting, and one workflow you can keep using after the program ends.</p>
         <span class="solution-badge">Current Priority Offer</span>
       </div>
       <div class="card">
         <span class="card-icon">📝</span>
         <h3>Application + Enrollment Path</h3>
-        <p>The website and quiz qualify interest first. Then, if the program looks like the right fit, we use a short enrollment call to answer questions and guide the right owners into the cohort.</p>
-        <span class="solution-badge">Academia Funnel</span>
+        <p>The website and quiz qualify interest first. Then, if the program looks like the right fit, the next step is payment, account creation, and calendar booking. A phone call is available if someone wants one, but it is optional.</p>
+        <span class="solution-badge">Enrollment Funnel</span>
       </div>
     </div>
   </div>
@@ -351,10 +356,10 @@
         <p>Steve leads client relationships, live delivery, and day-to-day operations. His background is in operations and workforce training, with a focus on helping people adopt new tools in a way that actually sticks.</p>
       </div>
       <div class="founder-card">
-        <div class="founder-initials">SP</div>
-        <div class="founder-name">Sunshine Pagan</div>
-        <div class="founder-title">Co-Founder &amp; Strategist<br/>Enterprise Enablement Leader | AI &amp; Contact Center Transformation</div>
-        <p>Sunshine leads AI and contact center transformation work in enterprise environments and brings that experience into Illumios curriculum and strategy design. Her focus is translating complex change into clear, usable next steps.</p>
+        <div class="founder-initials">PS</div>
+        <div class="founder-name">Program and strategy support</div>
+        <div class="founder-title">Behind-the-scenes support<br/>Curriculum, strategy &amp; implementation design</div>
+        <p>illumios also draws on behind-the-scenes input from experienced operators and AI enablement practitioners to shape the curriculum, strengthen the strategy, and keep the program tied to practical implementation.</p>
       </div>
     </div>
     <div class="credibility-quote">
@@ -367,26 +372,32 @@
 <section class="how" id="how">
   <div class="container">
     <div class="section-label">The Process</div>
-    <h2 style="color:white">Simple from first click to first win.</h2>
-    <p class="section-sub">The process is designed to get the right owners into the program quickly, set clear expectations, and move them toward one real implementation result.</p>
+    <h2 style="color:white">A simple pre-launch path from waitlist to enrollment.</h2>
+    <p class="section-sub">The founding cohort is opening soon, so the first goal is simple: get the right owners onto the priority list, keep them updated, and move them into enrollment when the cohort opens.</p>
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Apply on this page</h3>
-        <p>Start with your name and email, then answer a short fit quiz so we can understand your business, your current AI experience, and what kind of help fits best.</p>
+        <h3>Join the priority list</h3>
+        <p>Raise your hand with your name and email so you are in the first group to hear when the founding cohort opens.</p>
         <div class="step-timeline">Today</div>
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Review your roadmap</h3>
-        <p>You get a personalized recommendation, clearer priorities, and a better sense of whether Illumios Academia is the right next step now or later.</p>
-        <div class="step-timeline">Immediately After</div>
+        <h3>Get launch updates</h3>
+        <p>We share opening timing, cohort details, and what to expect so you can decide whether the program fits before spots fill.</p>
+        <div class="step-timeline">Before Enrollment</div>
       </div>
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Join the live cohort</h3>
-        <p>If it fits, we invite you into a short enrollment conversation and move you toward 4 live sessions focused on one meaningful implementation win.</p>
-        <div class="step-timeline">2 Weeks</div>
+        <h3>Receive the founding cohort invite</h3>
+        <p>Priority-list owners hear first when enrollment opens, giving you the earliest look at the live cohort details and next steps.</p>
+        <div class="step-timeline">Opening Day</div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Complete the fit quiz and enrollment steps</h3>
+        <p>When the cohort opens, qualified people move into the fit quiz, payment, account setup, and scheduling flow.</p>
+        <div class="step-timeline">When Live</div>
       </div>
     </div>
   </div>
@@ -396,30 +407,30 @@
 <section class="expectations">
   <div class="container">
     <div class="section-label">What To Expect</div>
-    <h2>What happens after you apply.</h2>
-    <p class="section-sub">Here&rsquo;s what the process looks like when the goal is to help the right owners get into the program and get a real outcome from it.</p>
+    <h2>What happens after you join the priority list.</h2>
+    <p class="section-sub">Here&rsquo;s what the pre-launch path looks like when the goal is to keep the offer simple, set expectations clearly, and move the right owners into enrollment at the right time.</p>
     <div class="expectations-layout">
       <div class="expectation-card">
         <ul class="expectation-list">
           <li>
             <div class="expectation-number">1</div>
             <div class="expectation-copy">
-              <strong>You start with a short application.</strong>
-              <span>We ask for your name and email first, then move you into a fit quiz so the next step reflects your business instead of generic AI advice.</span>
+              <strong>You save your spot on the list first.</strong>
+              <span>The first step is simply joining the priority list so we know who wants founding-cohort updates and early access.</span>
             </div>
           </li>
           <li>
             <div class="expectation-number">2</div>
             <div class="expectation-copy">
-              <strong>You get a clear recommendation.</strong>
-              <span>If the program fits, we guide you toward enrollment. If you need a different path first, we will tell you plainly instead of forcing the sale.</span>
+              <strong>You hear from us when enrollment is ready.</strong>
+              <span>We send launch timing, cohort details, and the opening invite before we ask you to take the fit quiz or move into enrollment.</span>
             </div>
           </li>
           <li>
             <div class="expectation-number">3</div>
             <div class="expectation-copy">
-              <strong>You work toward one meaningful implementation win.</strong>
-              <span>The program is built to move you from uncertainty into practical use, not just inspiration.</span>
+              <strong>You move into the quiz and enrollment flow only when it is live.</strong>
+              <span>Once the founding cohort opens, qualified people move into the fit quiz, payment, account setup, and any supporting enrollment steps.</span>
             </div>
           </li>
         </ul>
@@ -431,12 +442,12 @@
           <p>No. The page, the application, and the recommendations are built for business owners, not developers.</p>
         </div>
         <div class="faq-item">
-          <strong>Is this a sales call?</strong>
-          <p>Not at first. The first step is a short application and fit quiz. If the program looks like a match, the next step may be a short enrollment call.</p>
+          <strong>What happens after I join the list?</strong>
+          <p>You get launch updates, founding cohort details, and the first email when enrollment opens. At that point, qualified people move into the fit quiz and enrollment flow.</p>
         </div>
         <div class="faq-item">
-          <strong>What if I need deeper help later?</strong>
-          <p>That can happen after the cohort. Right now, the main offer is Illumios Academia and we want to keep the promise focused.</p>
+          <strong>Is this a sales call?</strong>
+          <p>No. The first step is the priority list. If the program looks like a match when enrollment opens, the next steps are the fit quiz and enrollment flow, with phone support only if you want it.</p>
         </div>
       </div>
     </div>
@@ -446,8 +457,8 @@
 <!-- FINAL CTA -->
 <section class="final-cta" id="cta">
   <div class="container">
-    <h2>Start your application.</h2>
-    <p>Tell us where to send your program details and personalized fit roadmap. Then we&rsquo;ll take you into the short quiz that helps qualify the right owners for Illumios Academia.</p>
+    <h2>Join the priority list.</h2>
+    <p>Tell us where to send founding cohort updates, opening details, and the first invite when enrollment goes live.</p>
     <form class="apply-form" id="apply" onsubmit="handleAcademiaApplication(event)">
       <div class="apply-grid">
         <div class="apply-field">
@@ -464,11 +475,13 @@
         </div>
       </div>
       <div class="apply-actions">
-        <button type="submit" class="btn-white">Continue to Fit Quiz →</button>
+        <button type="submit" class="btn-white" id="apply-submit-button">Join the Priority List</button>
       </div>
-      <p class="apply-legal">By continuing, you agree that illumios may email you about Illumios Academia and related next steps. No spam. Review our <a href="/privacy.html">Privacy Policy</a>.</p>
+      <p class="apply-legal">By joining, you agree that illumios may email you about the founding cohort, launch updates, and related next steps. No spam. Review our <a href="/privacy.html">Privacy Policy</a>.</p>
+      <p class="apply-status apply-error" id="apply-error" role="alert" hidden></p>
+      <p class="apply-status apply-success" id="apply-success" role="status" hidden></p>
     </form>
-    <p class="final-cta-note">4 live sessions over 2 weeks. Remote. Designed for small business owners.</p>
+    <p class="final-cta-note">Founding cohort opening soon. Remote. Built for small business owners.</p>
     <p class="service-areas">100% remote. Serving small businesses across the country.</p>
   </div>
 </section>
@@ -507,91 +520,109 @@ function getGhlConfig() {
   return window.ILLUMIOS_GHL || {};
 }
 
-function ensureWebhookTargetFrame() {
-  let frame = document.getElementById('ghl-webhook-target');
-  if (!frame) {
-    frame = document.createElement('iframe');
-    frame.id = 'ghl-webhook-target';
-    frame.name = 'ghl-webhook-target';
-    frame.style.display = 'none';
-    document.body.appendChild(frame);
+function getApplyEndpoint() {
+  const { applyEndpoint = '' } = getGhlConfig();
+  return typeof applyEndpoint === 'string' ? applyEndpoint.trim() : '';
+}
+
+function setApplyFeedback(type, message) {
+  const errorNode = document.getElementById('apply-error');
+  const successNode = document.getElementById('apply-success');
+
+  if (errorNode) {
+    errorNode.hidden = type !== 'error';
+    errorNode.textContent = type === 'error' ? message : '';
   }
-  return frame;
+
+  if (successNode) {
+    successNode.hidden = type !== 'success';
+    successNode.textContent = type === 'success' ? message : '';
+  }
 }
 
-function postToGhlWebhook(payload) {
-  const { inboundWebhookUrl = '' } = getGhlConfig();
-  if (!inboundWebhookUrl) return false;
+function setApplySubmitting(isSubmitting) {
+  const submitButton = document.getElementById('apply-submit-button');
+  if (!submitButton) return;
 
-  ensureWebhookTargetFrame();
-
-  const form = document.createElement('form');
-  form.method = 'POST';
-  form.action = inboundWebhookUrl;
-  form.target = 'ghl-webhook-target';
-  form.style.display = 'none';
-
-  Object.entries(payload).forEach(([key, value]) => {
-    if (value === undefined || value === null || value === '') return;
-    const input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = key;
-    input.value = typeof value === 'string' ? value : JSON.stringify(value);
-    form.appendChild(input);
-  });
-
-  document.body.appendChild(form);
-  form.submit();
-  document.body.removeChild(form);
-  return true;
+  submitButton.disabled = isSubmitting;
+  submitButton.textContent = isSubmitting ? 'Joining…' : 'Join the Priority List';
 }
 
-function handleAcademiaApplication(event) {
+async function handleAcademiaApplication(event) {
   event.preventDefault();
 
+  const applyEndpoint = getApplyEndpoint();
   const firstName = document.getElementById('apply-first-name').value.trim();
   const email = document.getElementById('apply-email').value.trim();
   const phone = document.getElementById('apply-phone').value.trim();
-  const ghl = getGhlConfig();
 
-  if (!firstName || !email) return;
+  if (!firstName || !email) {
+    return;
+  }
+
+  if (!applyEndpoint) {
+    setApplyFeedback('error', 'Lead capture is not configured yet. Please email info@illumios.com and we will add you manually.');
+    return;
+  }
+
+  setApplyFeedback('', '');
+  setApplySubmitting(true);
 
   const lead = {
     firstName,
     email,
     phone,
-    source: 'illumios-website',
+    source: 'website-waitlist',
     offer: 'illumios-academia'
   };
 
-  postToGhlWebhook({
-    event_name: 'website_academia_application_started',
-    source: 'illumios-website',
-    offer: ghl.offerSlug || 'illumios-academia',
-    location_id: ghl.locationId || '',
-    page_url: window.location.href,
-    first_name: firstName,
-    email,
-    phone,
-    tags: 'academia-interest,illumios-academia,website-application',
-    payload_json: JSON.stringify(lead)
-  });
-
   try {
-    localStorage.setItem('illumiosAcademiaLead', JSON.stringify(lead));
+    const response = await fetch(applyEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        firstName,
+        email,
+        phone,
+        source: 'website-waitlist',
+        pageUrl: window.location.href
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data || data.ok === false) {
+      setApplyFeedback(
+        'error',
+        (data && data.message) || 'We could not save your details right now. Please try again.'
+      );
+      return;
+    }
+
+    try {
+      localStorage.setItem('illumiosAcademiaLead', JSON.stringify(lead));
+    } catch (error) {
+      console.warn('Unable to store lead locally after submission.', error);
+    }
+
+    if (data.redirectUrl) {
+      window.location.href = data.redirectUrl;
+      return;
+    }
+
+    setApplyFeedback(
+      'success',
+      data.message || 'You’re on the priority list. We’ll email you when the founding cohort opens.'
+    );
+    event.target.reset();
   } catch (error) {
-    console.warn('Unable to store lead locally before redirect.', error);
+    console.warn('Unable to submit application payload.', error);
+    setApplyFeedback('error', 'We could not save your details right now. Please try again.');
+  } finally {
+    setApplySubmitting(false);
   }
-
-  const params = new URLSearchParams({
-    first_name: firstName,
-    email,
-    source: 'website-academia'
-  });
-
-  if (phone) params.set('phone', phone);
-
-  window.location.href = `https://quiz.illumios.com?${params.toString()}`;
 }
 </script>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69d61e573d6e1646e16177f4"></script>

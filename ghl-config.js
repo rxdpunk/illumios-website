@@ -1,8 +1,9 @@
 window.ILLUMIOS_GHL = Object.assign(
   {
-    // Paste the HighLevel Inbound Webhook URL from the Academia lead-capture workflow here.
-    // This URL is public if committed in a static site. Rotate it in GHL if needed.
-    inboundWebhookUrl: '',
+    // GitHub Pages posts lead capture to the Vercel backend so the public site
+    // can use the server-side GHL REST API flow without exposing a public GHL
+    // webhook URL.
+    applyEndpoint: 'https://illumios-website.vercel.app/api/apply',
     locationId: 'OZuyOTAOTmf8eXnn8n0G',
     offerSlug: 'illumios-academia'
   },
